@@ -1,7 +1,7 @@
 const cardArray = [
-{
+    {
         name: 'fries',
-        img: 'images/fries.png'
+        img: ''
     },
     {
         name: 'cheeseburger',
@@ -54,10 +54,13 @@ cardArray.sort(() =>0.5 - Math.random())
 const gridDisplay = document.querySelector('#grid')
 
 function createBoard(){
-    for(let i = 0; i < 10; i++){
+    for(let i = 0; i < cardArray.length; i++){
         const card = document.createElement('img')
+        // console.log(card, i);
         card.setAttribute('src', 'images/blank.png')
         card.setAttribute('data-id', i)
         gridDisplay.appendChild(card)
     }
 }
+
+createBoard()
